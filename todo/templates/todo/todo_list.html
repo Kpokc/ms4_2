@@ -13,10 +13,17 @@
         {% for item in items %}
             <tr>
                 {% if item.done %}
+                    <td>{{ item.id }}</td>
                     <td><strike>{{ item.name }}</strike></td>
                 {% else %}
+                    <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
                 {% endif %}
+                <td>
+                    <a href="/edit/{{ item.id }}">
+                        <button>Edit</button>
+                    </a>
+                </td>
             </tr>
         {% empty %}
         <tr><td>You have nothing to do!</td></tr>
